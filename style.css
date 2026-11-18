@@ -1,0 +1,236 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #080d1c;
+  color: #f4e7c2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.welcome-screen {
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 35px 20px;
+  background:
+    radial-gradient(ellipse at 50% 40%, #26365a 0%, #111b32 38%, #080d1c 78%);
+}
+
+.welcome-screen::before,
+.welcome-screen::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(219, 181, 108, 0.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.welcome-screen::before {
+  width: 390px;
+  height: 390px;
+}
+
+.welcome-screen::after {
+  width: 440px;
+  height: 440px;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.6;
+  background-image:
+    radial-gradient(2px 2px at 20% 20%, #f4dba6 50%, transparent),
+    radial-gradient(2px 2px at 80% 30%, #f4dba6 50%, transparent),
+    radial-gradient(1px 1px at 35% 75%, #fff 50%, transparent),
+    radial-gradient(2px 2px at 70% 80%, #f4dba6 50%, transparent),
+    radial-gradient(1px 1px at 50% 15%, #fff 50%, transparent);
+  background-size: 190px 190px;
+  animation: sparkle 5s ease-in-out infinite alternate;
+}
+
+.glow {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: #c49a50;
+  filter: blur(110px);
+  opacity: 0.16;
+}
+
+.invitation-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  animation: appear 2s ease both;
+}
+
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #d9bd83;
+  line-height: 2;
+}
+
+.royal-symbol {
+  font-family: serif;
+  font-size: 55px;
+  color: #d9b879;
+  margin: 32px 0 12px;
+}
+
+.couple-names {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: clamp(65px, 17vw, 100px);
+  line-height: 1.05;
+  color: #f0d8a1;
+  text-shadow: 0 0 30px rgba(221, 183, 111, 0.2);
+}
+
+.couple-names span {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  margin: 8px;
+  font-style: italic;
+}
+
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 30px auto;
+  color: #d9b879;
+}
+
+.gold-divider span {
+  width: 65px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d9b879);
+}
+
+.gold-divider span:last-child {
+  transform: rotate(180deg);
+}
+
+.invitation-text {
+  font-size: 9px;
+  letter-spacing: 2px;
+  line-height: 2.3;
+  color: #d7d2c5;
+}
+
+.wedding-date {
+  margin-top: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #f0d8a1;
+}
+
+.enter-button {
+  margin-top: 45px;
+  padding: 15px 23px;
+  border: 1px solid #c9a76a;
+  background: transparent;
+  color: #f0d8a1;
+  font-size: 9px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.enter-button:hover {
+  background: #c9a76a;
+  color: #080d1c;
+  box-shadow: 0 0 30px rgba(201, 167, 106, 0.25);
+}
+
+.arrow {
+  margin-left: 15px;
+}
+
+.bottom-note {
+  margin-top: 55px;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #b5a88e;
+}
+
+.ornament {
+  position: absolute;
+  z-index: 2;
+  color: #c9a76a;
+  letter-spacing: 8px;
+  font-size: 20px;
+}
+
+.top-ornament {
+  top: 28px;
+}
+
+.bottom-ornament {
+  bottom: 28px;
+}
+
+.main-invitation {
+  min-height: 100svh;
+  background: #111b32;
+  text-align: center;
+  padding: 100px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.main-invitation h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  color: #f0d8a1;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes sparkle {
+  from { opacity: 0.25; }
+  to { opacity: 0.8; }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 380px) {
+  .couple-names {
+    font-size: 65px;
+  }
+
+  .eyebrow {
+    letter-spacing: 2px;
+  }
+}
