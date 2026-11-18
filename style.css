@@ -234,3 +234,73 @@ body {
     letter-spacing: 2px;
   }
 }
+
+/* DIYA LIGHTING CEREMONY */
+
+.diya-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 35px auto 5px;
+  position: relative;
+}
+
+.diya {
+  position: relative;
+  font-size: 30px;
+  filter: grayscale(1) brightness(0.65);
+  transition: filter 1s ease;
+}
+
+.diya .flame {
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  width: 9px;
+  height: 15px;
+  transform: translateX(-50%) scale(0);
+  border-radius: 50% 50% 40% 40%;
+  background: linear-gradient(
+    to top,
+    #ff7a00,
+    #ffe58a,
+    #fff8d9
+  );
+  opacity: 0;
+  box-shadow: 0 0 12px #ffae35;
+  transition: 0.5s;
+}
+
+.diya.lit {
+  filter: none;
+  animation: diyaGlow 2s ease-in-out infinite alternate;
+}
+
+.diya.lit .flame {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  animation: flameDance 0.5s ease-in-out infinite alternate;
+}
+
+.diya-stage.lighting {
+  filter: drop-shadow(0 0 15px rgba(255, 174, 53, 0.4));
+}
+
+@keyframes flameDance {
+  from {
+    transform: translateX(-50%) scale(1) rotate(-7deg);
+  }
+  to {
+    transform: translateX(-50%) scale(1.12) rotate(7deg);
+  }
+}
+
+@keyframes diyaGlow {
+  from {
+    filter: drop-shadow(0 0 4px #d99b42);
+  }
+  to {
+    filter: drop-shadow(0 0 15px #ffbd58);
+  }
+}
